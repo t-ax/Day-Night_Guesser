@@ -53,11 +53,27 @@ const trainingdata = [
         output:[0]
     },
     {
-        input: {r: 0, g: 0.80, b:0.49, a:1 },
+        input: {r: 0, g: 1, b:0.40, a:1 },
         output:[0]
     },
     {
-        input: {r: 0, g: 0.49, b:0.80, a:1 },
+        input: {r: 0, g: 0.8, b:0.40, a:1 },
+        output:[0]
+    },
+    {
+        input: {r: 0, g: 0.6, b:0.40, a:1 },
+        output:[0]
+    },
+    {
+        input: {r: 0, g: 0.40, b:1, a:1 },
+        output:[0]
+    },
+    {
+        input: {r: 0, g: 0.40, b:0.8, a:1 },
+        output:[0]
+    },
+    {
+        input: {r: 0, g: 0.40, b:0.6, a:1 },
         output:[0]
     },
     {
@@ -65,7 +81,7 @@ const trainingdata = [
         output:[0]
     },
 ];
-network.train(trainingdata);
+network.train(trainingdata, {iterations: 5000, errorTresh: 0.0001 });
 
 //display the neural network
 displayneuralnetwork = brain.utilities.toSVG(network);
