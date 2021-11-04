@@ -1,32 +1,34 @@
 const DayNightService = require("../Services/DayNight.service.js");
+var getPixels = require("get-pixels") //Image to get pixels from Image URL
 
-exports.CheckIfImageCanLoad = (ImageUrl) => {
+
+function CheckIfImageExistsAndGetPixels (ImageUrl)  {
     return new Promise((resolve, reject) => {
-        let imageToLoadAndCheckIfError = new Image();
-        imageToLoadAndCheckIfError.onload(() => resolve(ImageUrl));
-        imageToLoadAndCheckIfError.onerror((error) => reject(error));
-        imageToLoadAndCheckIfError.src=ImageUrl;
+      getPixels(ImageUrl, function(err, pixels) {
+        if(err) {reject("400"); return}
+        resolve(pixels.shape)
+      })
     })
+}
+exports.TESTFUNCTION_CheckIfImageExistsAndGetPixels = (ImageUrl) => {
+  return new Promise((resolve, reject) => {
+    CheckIfImageExistsAndGetPixels(ImageUrl).then((pixels)=>{resolve(pixels)}).catch((error)=>{reject(error)})
+  })
 }
 
 
 exports.CheckUrlAndExecuteService = (req, res) => {
+    console.log(req.params.ImageUrl)
+    CheckIfImageExistsAndGetPixels(req.params.ImageUrl).then((pixels)=>{
 
-    CheckIfImageCanLoad(req.params.ImageUrl).then((ImageUrl)=>{
-
-
-    })
-
-
-    DayNightService.IsTheImageDayOrNight(ImageUrl)
-      .then(data => {
-        if (!data)
-          res.status(404).send({ message: "Error with following image " + ImageUrl });
-        else res.send(data);
+      DayNightService.IsTheImageDayOrNight(pixels).then(result => {
+        res.send(result);
       })
-      .catch(err => {
-        res
-          .status(500)
-          .send({ message: "Error retrieving kpi with id=" + id });
-      });
+
+    }).catch((error)=>{
+      if(error="400"){
+        res.status(400).send({ message: "Image could not be loaded, please check URL" });
+      }
+    })
 }
+

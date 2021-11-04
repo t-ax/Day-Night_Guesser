@@ -1,7 +1,4 @@
-const express = require('express');
-const app = express();
 
-require("./app/routes/kpi.routes")(app);
-
-
+const app = require('express')();
+require("./App/Routes/DayNight.routes")(app);
 app.listen(process.env.PORT || 8080);
