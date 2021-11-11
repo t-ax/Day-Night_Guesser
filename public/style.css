@@ -1,0 +1,65 @@
+*{
+    /*background: #5CDB95;*/
+    background: #5CDB95;
+    margin:0;
+}
+
+.headerbox{
+    background: #05386B;
+    height: 45px;
+    width: 100%;
+    margin: 0 auto;
+    color: #EDF5E1;
+    text-align: center;
+    font-style:oblique;
+    font-size: xx-large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#displaynetwork{
+    display: block;
+    height: 250px;
+    width: 400px;
+    margin: 30px auto;
+}
+
+.mainblocktitle{
+    background: #05386B;
+    height: 20px;
+    width: 100px;
+    margin: 0 auto;
+    color: #EDF5E1;
+    text-align: center;
+    font-style:oblique;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mainblock{ /*Gallery*/
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+}
+
+.mainblock>div{ /*Subblock*/
+    display: block;
+    border: 10px solid #1bd779;
+    margin: 10px 0px;
+    padding: 0;
+    position: relative;
+}
+
+.mainblock>div>img{/*Image*/
+    display: block;
+    height: 300px;
+    width: 400px;
+}
+.mainblock>div>div{/*Caption/result*/
+    position: absolute;
+    top: 50%;
+    width: 10%;
+    left: 88%;
+}
+.mainblock>div>canvas{/*HiddenCanvas*/
+    visibility: hidden;
+    display: none;
+}

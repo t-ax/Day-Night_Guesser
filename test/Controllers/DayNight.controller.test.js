@@ -1,6 +1,6 @@
 
 const TESTFUNCTION_CheckIfImageExistsAndGetPixels = require('../../App/Controllers/DayNight.controller.js').TESTFUNCTION_CheckIfImageExistsAndGetPixels;
-const CheckUrlAndExecuteService = require('../../App/Controllers/DayNight.controller.js').CheckUrlAndExecuteService;
+const CheckUrlAndExecuteServiceForAPI = require('../../App/Controllers/DayNight.controller.js').CheckUrlAndExecuteServiceForAPI;
 const assert = require('chai').assert;
 const httpMocks = require('node-mocks-http');
 const EventEmitter = require('events');
@@ -40,7 +40,7 @@ describe("Our Controller",function(){
             assert.equal(data[0],'Day')
             done();
         })
-        CheckUrlAndExecuteService(request, response)
+        CheckUrlAndExecuteServiceForAPI(request, response)
     })
     it('Can use our Service functions to say when an image is Night', (done) => {
         var request  = httpMocks.createRequest({method: 'GET',url: "/?ImageUrl="+encodeURIComponent(NIGHTIMAGEURL)});
@@ -50,7 +50,7 @@ describe("Our Controller",function(){
             assert.equal(data[0],'Night')
             done();
         })
-        CheckUrlAndExecuteService(request, response)
+        CheckUrlAndExecuteServiceForAPI(request, response)
     })
 
 })

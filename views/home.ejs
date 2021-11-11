@@ -3,12 +3,29 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>DayNight API</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="style.css" rel="stylesheet"/>
     <script src='main.js'></script>
 </head>
 <body>
-    test
+    <div class="headerbox"> Day or Night AI Guesser </div>
+
+    <form method='GET' action="/runUserImage">
+        <section id="userpanel">
+            <label>Put an Image URL to test the API</label>
+            <input type="text" id="ImageUrl" name="ImageUrl"/>
+            <button type="submit" id="RunButton">Run</button>
+        </section>
+        <section id="resultpanel">
+            <div class="mainblocktitle" >Results</div>
+            <div class="mainblock" id="mainblock">
+                <div id="subblock">
+                    <img src="<%= ImageUrl %>"/>
+                    <div><%= result %><br/><%= percentage %></div>
+                </div>
+            </div>
+        </section>
+    </form>
 </body>
 </html>
