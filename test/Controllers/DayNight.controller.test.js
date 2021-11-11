@@ -32,7 +32,7 @@ describe("Our Controller",function(){
             assert.equal(error,"400")
         })
     })
-    it('Says when an image is Day', (done) => {
+    it('Can use our Service functions to say when an image is Day', (done) => {
         var request  = httpMocks.createRequest({method: 'GET',url: "/?ImageUrl="+encodeURIComponent(DAYIMAGEURL)});
         var response = httpMocks.createResponse({eventEmitter: EventEmitter});
         response.on('end', () => {
@@ -42,7 +42,7 @@ describe("Our Controller",function(){
         })
         CheckUrlAndExecuteService(request, response)
     })
-    it('Says when an image is Night', (done) => {
+    it('Can use our Service functions to say when an image is Night', (done) => {
         var request  = httpMocks.createRequest({method: 'GET',url: "/?ImageUrl="+encodeURIComponent(NIGHTIMAGEURL)});
         var response = httpMocks.createResponse({eventEmitter: EventEmitter});
         response.on('end', () => {

@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "brain": "^1.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "get-pixels": "^3.3.3",
     "gpu.js": "^2.11.4"
