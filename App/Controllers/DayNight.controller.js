@@ -14,7 +14,7 @@ function CheckIfImageExistsAndGetPixels (ImageUrl)  {
           pixels[2]+= res.data[i+2]; //B
           pixels[3]+= res.data[i+3]; //A
         }
-        resolve([pixels, datalength])
+        resolve([pixels, datalength, ImageUrl])
       })
     })
 }
@@ -35,14 +35,14 @@ function CheckImageGetPixelsAndDefineDayOrNight(ImageUrl){
 
 exports.CheckUrlAndExecuteServiceForAPI = (req, res) => {
   CheckImageGetPixelsAndDefineDayOrNight(req.query.ImageUrl).then((result)=>{
-    res.send(result);
+    res.send([...result, req.query.ImageUrl]);
   }).catch((error)=>{if(error="400"){res.status(400).send({ message: "Image could not be loaded, please check URL" });}})
 }
 exports.CheckUrlAndExecuteServiceForEJS = (req, res) => {
   CheckImageGetPixelsAndDefineDayOrNight(req.query.ImageUrl).then((result)=>{
-    res.render("home", {'ImageUrl' : req.query.ImageUrl, 'result': result[0], 'percentage': result[1], 'error': null})
+    res.render("home", {'result': result[0], 'percentage': result[1], 'ImageUrl' : req.query.ImageUrl, 'error': null})
   }).catch((error)=>{
-      if(error="400"){res.render("home", {'ImageUrl' : null, 'result': null, 'percentage': null, 'error': "Image could not be loaded, please check URL"})}
+      if(error="400"){res.render("home", {'result': null, 'percentage': null, 'ImageUrl' : null, 'error': "Image could not be loaded, please check URL"})}
   })
 }
 

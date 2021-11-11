@@ -43,7 +43,12 @@ const trainingdata = [
         input: {r: 0, g: 0, b:0, a:1 },
         output:[0]
     },
+    {
+        input: {r: 1, g: 0, b:0, a:1 },
+        output:[0]
+    },
 ];
+//https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBWbDMtDygvRxsKqktoVTVjyw-wFhKqdYcAA&usqp=CAU
 
 guessAndDisplayNightOrDayBasedOnPixels = (pixelsRGBAData, resultdisplay) =>{
     const testdata=[0,0,0,0];
