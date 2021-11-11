@@ -7,13 +7,12 @@ const TRUEIMAGEURL = "https://images.pexels.com/photos/53594/blue-clouds-day-flu
 const app = require('express')();
 require("../../App/Routes/DayNight.routes")(app);
 
+
 describe("Our Routes",()=>{
-    it('Can use our controller functions when it receives a URL',()=>{
-        return chai.request(app).get('/'+TRUEIMAGEURL).then((res)=>{
-            
-            console.log(res);
+    it('Can use our controller functions when it receives a URL', (done)=>{
+        chai.request(app).get("/?ImageUrl="+encodeURIComponent(TRUEIMAGEURL)).then((res) => {
             expect(res.status).to.equal(200);
-            
-        })
+            done()
+        }).catch(done)
     })
 })

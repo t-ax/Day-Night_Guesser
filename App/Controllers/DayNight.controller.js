@@ -18,12 +18,13 @@ exports.TESTFUNCTION_CheckIfImageExistsAndGetPixels = (ImageUrl) => {
 
 
 exports.CheckUrlAndExecuteService = (req, res) => {
-    console.log(req.params.ImageUrl)
-    CheckIfImageExistsAndGetPixels(req.params.ImageUrl).then((pixels)=>{
-
-      DayNightService.IsTheImageDayOrNight(pixels).then(result => {
-        res.send(result);
-      })
+    console.log(req.query.ImageUrl)
+    CheckIfImageExistsAndGetPixels(req.query.ImageUrl).then((pixels)=>{
+      // DayNightService.IsTheImageDayOrNight(pixels).then(result => {
+      //   res.status(200).send(result);
+      // })
+      // console.log("ok")
+      res.status(200).send({ message: "Ok" });
 
     }).catch((error)=>{
       if(error="400"){
