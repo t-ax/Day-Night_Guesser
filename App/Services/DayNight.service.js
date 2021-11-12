@@ -1,5 +1,5 @@
 
-const brain = require('brain')
+const brain = require('../../brainJS_module/brain')
 //AI Algorithm
 const network = new brain.NeuralNetwork();
 const trainingdata = [
