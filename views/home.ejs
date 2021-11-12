@@ -17,15 +17,18 @@
             <h1> DAY <br/> NIGHT <br/> API </h1>
         </section>
 
-        <section class="centerpanel">
-            <form method='GET' action="/runUserImage">
-                <section id="userpanel">
-                    <h2 class="label" >Find a sky image & Insert the URL</h2>
-                    <input class="ImageUrlInput" type="text" id="ImageUrl" name="ImageUrl"/>
-                    <button class="Button Run" type="submit" id="RunButton">Run</button>
-                    <a class="Button How-To" href="#">How-To API</a>
+        
+        <form method='GET' action="/runUserImage">
+            <section class="centerpanel">
+                <section class="userpanel">
+                    <h2 class="label" >Find a sky image <br/>& Insert the URL</h2>
+                    <div class="input">
+                        <input class="ImageUrlInput" type="text" id="ImageUrl" name="ImageUrl"/>
+                        <button class="ButtonRun" type="submit" id="RunButton">Run</button>
+                    </div>
+                    <a href="#"><button class="ButtonHowTo">How-To API</button></a>
                 </section>
-                <section id="resultpanel">
+                <section class="resultpanel">
                     <div class="mainblock" id="mainblock">
                         <div id="subblock">
                             <img class="image" src="<%= ImageUrl %>"/>
@@ -33,8 +36,8 @@
                         </div>
                     </div>
                 </section>
-            </form>
-        </section>
+            </section>
+        </form>
 
         <section class="Disclaimer">Disclaimer : App made for fun and for my portfolio, the Algorithm’s Training Data are not complete, therefore do not use for serious projects.</section>
         <section class="footer">
