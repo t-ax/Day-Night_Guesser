@@ -16,7 +16,7 @@ html, body{
     background-position: bottom;
     box-shadow: inset 0px 4px 25px 500px rgba(0, 0, 0, 0.25);
     display: grid;
-    grid-template: 25% 55% 10% 10% / 100%;
+    grid-template: 25% 60% 10% 5% / 100%;
 }
 
 /* *************************** HEADER *********************************** */
@@ -95,5 +95,26 @@ html, body{
 /* *************************** FOOTER *********************************** */
 .footer{
     grid-area : 4/1/5/2;
-    background: green;
+    display:flex; justify-content: space-between;
+}
+.footer > .DesignedBy{
+    font-size: 0.7em;
+}
+.footer > .links > a{
+    text-decoration: none;
+    
+    margin-left: 1em;
+
+    font-style: normal;
+    font-weight: 900;
+    font-size: 0.8em;
+
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+    -webkit-text-fill-color: transparent; 
+    background-image: url(checker.png);
+    background-size:cover;
+    background-position: bottom;
 }
