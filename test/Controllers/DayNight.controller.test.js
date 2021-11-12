@@ -37,7 +37,7 @@ describe("Our Controller",function(){
         var response = httpMocks.createResponse({eventEmitter: EventEmitter});
         response.on('end', () => {
             let data = response._getData();
-            assert.equal(data[0],'Day')
+            assert.equal(data.result,'Day')
             done();
         })
         CheckUrlAndExecuteServiceForAPI(request, response)
@@ -47,7 +47,7 @@ describe("Our Controller",function(){
         var response = httpMocks.createResponse({eventEmitter: EventEmitter});
         response.on('end', () => {
             let data = response._getData();
-            assert.equal(data[0],'Night')
+            assert.equal(data.result,'Night')
             done();
         })
         CheckUrlAndExecuteServiceForAPI(request, response)

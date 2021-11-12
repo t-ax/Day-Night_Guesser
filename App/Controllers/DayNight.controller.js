@@ -35,7 +35,7 @@ function CheckImageGetPixelsAndDefineDayOrNight(ImageUrl){
 
 exports.CheckUrlAndExecuteServiceForAPI = (req, res) => {
   CheckImageGetPixelsAndDefineDayOrNight(req.query.ImageUrl).then((result)=>{
-    res.send([...result, req.query.ImageUrl]);
+    res.send({'result': result[0], 'percentage': result[1], 'ImageUrl' : req.query.ImageUrl});
   }).catch((error)=>{if(error="400"){res.status(400).send({ message: "Image could not be loaded, please check URL" });}})
 }
 exports.CheckUrlAndExecuteServiceForEJS = (req, res) => {
