@@ -34,11 +34,17 @@ function CheckImageGetPixelsAndDefineDayOrNight(ImageUrl){
 }
 
 exports.CheckUrlAndExecuteServiceForAPI = (req, res) => {
+  res.setHeader('Content-Type', 'text/html'); //vercel config
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate'); //vercel config
+
   CheckImageGetPixelsAndDefineDayOrNight(req.query.ImageUrl).then((result)=>{
     res.send({'result': result[0], 'percentage': result[1], 'ImageUrl' : req.query.ImageUrl});
   }).catch((error)=>{if(error="400"){res.status(400).send({ message: "Image could not be loaded, please check URL" });}})
 }
 exports.CheckUrlAndExecuteServiceForEJS = (req, res) => {
+  res.setHeader('Content-Type', 'text/html'); //vercel config
+  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate'); //vercel config
+  
   CheckImageGetPixelsAndDefineDayOrNight(req.query.ImageUrl).then((result)=>{
     res.render("home", {'result': result[0], 'percentage': result[1], 'ImageUrl' : req.query.ImageUrl, 'error': null})
   }).catch((error)=>{
