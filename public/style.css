@@ -1,65 +1,57 @@
 *{
-    /*background: #5CDB95;*/
-    background: #5CDB95;
-    margin:0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html, body{
+    height: 100%; width: 100%;
+    margin:0; padding: 0;
 }
 
-.headerbox{
-    background: #05386B;
-    height: 45px;
+.App{
+    height: 100%;
     width: 100%;
-    margin: 0 auto;
-    color: #EDF5E1;
-    text-align: center;
-    font-style:oblique;
-    font-size: xx-large;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(dominik-schroder-FIKD9t5_5zQ-unsplash.jpg);
+    background-size:cover;
+    background-position: bottom;
+    box-shadow: inset 0px 4px 25px 500px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template: 25% 55% 10% 10% / 100%;
 }
 
-#displaynetwork{
-    display: block;
-    height: 250px;
-    width: 400px;
-    margin: 30px auto;
+/* *************************** HEADER *********************************** */
+.header{
+    grid-area : 1/1/2/2;
+    font-style: normal;
+    text-align: right;
+    font-weight: 900;
+    font-size: 2.2em;
+    line-height: 1.7em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0.5em;
 }
-
-.mainblocktitle{
-    background: #05386B;
-    height: 20px;
-    width: 100px;
-    margin: 0 auto;
-    color: #EDF5E1;
-    text-align: center;
-    font-style:oblique;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.header>h1{
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+    -webkit-text-fill-color: transparent; 
+    background-image: url(checker.png);
+    background-size:contain;
+    background-position: bottom;
 }
-
-.mainblock{ /*Gallery*/
-    margin: 0 auto;
-    text-align: center;
-    width: 500px;
+/* *************************** CENTER *********************************** */
+.centerpanel{
+    grid-area : 2/1/3/2;
 }
-
-.mainblock>div{ /*Subblock*/
-    display: block;
-    border: 10px solid #1bd779;
-    margin: 10px 0px;
-    padding: 0;
-    position: relative;
+/* *************************** DISCLAIMER *********************************** */
+.Disclaimer{
+    grid-area : 3/1/4/2;
+    background: red;
 }
-
-.mainblock>div>img{/*Image*/
-    display: block;
-    height: 300px;
-    width: 400px;
-}
-.mainblock>div>div{/*Caption/result*/
-    position: absolute;
-    top: 50%;
-    width: 10%;
-    left: 88%;
-}
-.mainblock>div>canvas{/*HiddenCanvas*/
-    visibility: hidden;
-    display: none;
+/* *************************** FOOTER *********************************** */
+.footer{
+    grid-area : 4/1/5/2;
+    background: green;
 }

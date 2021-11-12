@@ -6,26 +6,45 @@
     <title>DayNight API</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="style.css" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+    </style>
     <script src='main.js'></script>
 </head>
 <body>
-    <div class="headerbox"> Day or Night AI Guesser </div>
-
-    <form method='GET' action="/runUserImage">
-        <section id="userpanel">
-            <label>Put an Image URL to test the API</label>
-            <input type="text" id="ImageUrl" name="ImageUrl"/>
-            <button type="submit" id="RunButton">Run</button>
+    <div class="App">
+        <section class="header">
+            <h1> DAY <br/> NIGHT <br/> API </h1>
         </section>
-        <section id="resultpanel">
-            <div class="mainblocktitle" >Results</div>
-            <div class="mainblock" id="mainblock">
-                <div id="subblock">
-                    <img src="<%= ImageUrl %>"/>
-                    <div><%= result %><br/><%= percentage %></div>
-                </div>
+
+        <section class="centerpanel">
+            <form method='GET' action="/runUserImage">
+                <section id="userpanel">
+                    <h2 class="label" >Find a sky image & Insert the URL</h2>
+                    <input class="ImageUrlInput" type="text" id="ImageUrl" name="ImageUrl"/>
+                    <button class="Button Run" type="submit" id="RunButton">Run</button>
+                    <a class="Button How-To" href="#">How-To API</a>
+                </section>
+                <section id="resultpanel">
+                    <div class="mainblock" id="mainblock">
+                        <div id="subblock">
+                            <img class="image" src="<%= ImageUrl %>"/>
+                            <div class="text"><%= result %><br/><%= percentage %></div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </section>
+
+        <section class="Disclaimer">Disclaimer : App made for fun and for my portfolio, the Algorithm’s Training Data are not complete, therefore do not use for serious projects.</section>
+        <section class="footer">
+            <div class="Designed-By">Designed by Tariq Axel</div>
+            <div class="links">
+                <a href="#">source code</a>
+                <a href="#">portfolio</a>
+                <a href="#">contact</a>
             </div>
         </section>
-    </form>
+    </div>
 </body>
 </html>
