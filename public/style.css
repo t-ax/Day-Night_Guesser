@@ -48,7 +48,7 @@ html, body{
     justify-content: space-between;
     align-items: center;
 }
-.userpanel{width : 50%;}
+.userpanel{width : 65%;}
 .userpanel > .label{
     color: white;
     font-style: normal;
@@ -59,10 +59,10 @@ html, body{
 }
 .userpanel > .input{height: 2em; width: 100%;}
 .userpanel > .input > .ImageUrlInput{
-    height: 100%; width: 70%;border-radius: 5px; border:none; margin-right: 0.5em;
+    height: 100%; width: 70%; max-width: 450px; border-radius: 5px; border:none; margin-right: 0.5em;
 }
 .userpanel > .input > .ButtonRun{
-    height: 100%; width: 10%;border-radius: 10px;  border: none; background: white; color: #53525C;
+    height: 100%; width: 10%; min-width: 50px; border-radius: 10px;  border: none; background: white; color: #53525C;
     font-style: normal;
     font-weight: 400;
     font-size: 0.8em;
@@ -77,12 +77,12 @@ html, body{
 }
 
 
-.resultpanel{width: 49%; display:flex; flex-direction:column; justify-content: center; align-items: center;}
+.resultpanel{width: 34%; display:flex; flex-direction:column; justify-content: center; align-items: flex-start;}
 .resultpanel > .image{ 
     height: 110px; width: 130px;
     border-radius: 10px;
 }
-.resultpanel > .text{color: white;font-weight: 900; line-height: 2em; margin-top: 0.5em;}
+.resultpanel > .text{color: white;font-weight: 900; text-align: center; font-size: 1em; line-height: 2em; margin-top: 0.5em;}
 /* *************************** DISCLAIMER *********************************** */
 .Disclaimer{
     grid-area : 3/1/4/2;
