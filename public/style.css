@@ -122,6 +122,7 @@ html, body{
     background-size:cover;
     background-position: bottom;
 }
+.footer > .links > .mail:hover::after {content : " :: tariqaxel@gmail.com";}
 
 
 /* Mobile */
