@@ -78,9 +78,9 @@ html, body{
 }
 
 
-.resultpanel{width: 34%; display:flex; flex-direction:column; justify-content: center; align-items: center;}
+.resultpanel{width: 34%; display:flex; flex-direction:column; justify-content: center; align-items: flex-start;}
 .resultpanel > .image{ 
-    height: 110px; width: 130px;
+    height: 170px; width: 200px;
     border-radius: 10px;
 }
 .resultpanel > .text{color: white;font-weight: 900; text-align: center; font-size: 1em; line-height: 2em; margin-top: 0.5em;}
@@ -128,10 +128,14 @@ html, body{
 /* Mobile */
 @media only screen and (max-width: 750px) {
     .centerpanel{flex-direction: column; justify-content: space-around; height: 100%;}
-    .resultpanel{width : 100%;}
+    .resultpanel{width : 100%;align-items: center;}
+    .resultpanel > .image{ height: 110px; width: 130px;}
     .userpanel{width : 100%;}
     .userpanel > .label{font-size: 2.5em;}
 }
 @media only screen and (max-width: 600px) {
+    .header{font-size: 1.5em;}
     .userpanel > .label{font-size: 1.6em;}
+    .Disclaimer{font-size: 0.5em;}
+    .footer{font-size: 0.4em;}
 }
