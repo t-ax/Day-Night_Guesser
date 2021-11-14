@@ -11,7 +11,7 @@ html, body{
     height: 100%;
     min-height: 750px;
     width: 100%;
-    padding: 3em;
+    padding: 2em;
     background-image: url(dominik-schroder-FIKD9t5_5zQ-unsplash.jpg);
     background-size:cover;
     background-position: bottom;
@@ -26,8 +26,8 @@ html, body{
     font-style: normal;
     text-align: right;
     font-weight: 900;
-    font-size: 2.2em;
-    line-height: 1.7em;
+    font-size: 1.7em;
+    line-height: 2.3em;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -54,11 +54,11 @@ html, body{
     color: white;
     font-style: normal;
     font-weight: 900;
-    font-size: 3em;
-    line-height: 1.7em;
-    margin: 0;
+    font-size: 4em;
+    line-height: 1.4em;
+    margin-bottom: 0.2em;
 }
-.userpanel > .input{height: 2em; width: 100%; margin-bottom : 20px;}
+.userpanel > .input{height: 2.3em; width: 100%; margin-bottom : 40px;}
 .userpanel > .input > .ImageUrlInput{
     height: 100%; width: 70%; max-width: 450px; border-radius: 5px; border:none; margin-right: 0.5em;
 }
@@ -70,23 +70,28 @@ html, body{
 }
 .userpanel > .ButtonHowTo{
     
-    height: 40px; width: 150px; border-radius: 20px; border: 10px solid black;
+    border-radius: 20px; border: 12px solid black;
+    padding-left: 20px; padding-right: 20px;
     background: black; color: white; text-decoration: none;
     font-style: normal;
     font-weight: 900;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 
-.resultpanel{width: 34%; display:flex; flex-direction:column; justify-content: center; align-items: flex-start;}
+.resultpanel{position: relative; width: 34%; display:flex; flex-direction:column; justify-content: center; align-items: flex-start;}
 .resultpanel > .image{ 
     height: 170px; width: 200px;
     border-radius: 10px;
 }
-.resultpanel > .text{color: white;font-weight: 900; text-align: center; font-size: 1em; line-height: 2em; margin-top: 0.5em;}
+.resultpanel > .text{position: absolute; bottom: -50px;width: 200px; color: white;font-weight: 900; text-align: center; font-size: 1.5em; line-height: 2em; margin-top: 0.5em;}
 /* *************************** DISCLAIMER *********************************** */
 .Disclaimer{
     grid-area : 3/1/4/2;
+    display: flex; justify-content: center; align-items: center;
+}
+.Disclaimer > .textsubpanel {
+    width: 50%;
     color:white;
     text-align: center;
     font-style: normal;
@@ -122,20 +127,31 @@ html, body{
     background-size:cover;
     background-position: bottom;
 }
-.footer > .links > .mail:hover::after {content : " :: tariqaxel@gmail.com";}
+@media only screen and (min-width: 950px) {
+    .footer > .links > .mail:hover::after {content : " :: tariqaxel@gmail.com";}
+}
 
+/* Mobile */
+@media only screen and (max-width: 950px) {
+    .userpanel > .label{font-size: 3em;}
+}
 
 /* Mobile */
 @media only screen and (max-width: 750px) {
+    .App{grid-template: 15% 65% 15% 5% / 100%;}
+    .header{font-size: 1.3em;}
     .centerpanel{flex-direction: column; justify-content: space-around; height: 100%;}
     .resultpanel{width : 100%;align-items: center;}
     .resultpanel > .image{ height: 110px; width: 130px;}
+    .resultpanel > .text{ font-size:1em; bottom: -30px;}
     .userpanel{width : 100%;}
     .userpanel > .label{font-size: 2.5em;}
+    .userpanel > .input > .ImageUrlInput{width: 80%;}
+    .Disclaimer>.textsubpanel{width: 100%;} 
 }
 @media only screen and (max-width: 600px) {
-    .header{font-size: 1.5em;}
-    .userpanel > .label{font-size: 1.6em;}
-    .Disclaimer{font-size: 0.5em;}
+    
+    .userpanel > .label{font-size:2em;}
+    .Disclaimer>.textsubpanel{ font-size: 0.5em; }
     .footer{font-size: 0.4em;}
 }
