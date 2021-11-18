@@ -10,7 +10,7 @@ Disclaimer : API made for fun for my portfolio, the Training Data is not complet
 
 1) Find a picture on unsplash for example using the KeyWords "Sky Night" or "Sky Day" : https://unsplash.com/s/photos/sky-night or https://unsplash.com/s/photos/sky-day
 
-2) Copy the image URL/Address, for example : https://media.istockphoto.com/photos/milky-way-night-sky-picture-id529675114?b=1&k=20&m=529675114&s=170667a&w=0&h=jeqbDRkRHphg1Cu7AowLd6ZhTRXDBxR19DmFEsCvRgk=
+2) Copy the image URL/Address, for example : https://images.unsplash.com/photo-1572191783453-62f99a6055ce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNreSUyMG5pZ2h0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 
 3) Insert the url in :
   -  the url input directly on the website 
