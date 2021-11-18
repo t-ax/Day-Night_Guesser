@@ -144,20 +144,21 @@ html, body{
 
 /* Mobile */
 @media only screen and (max-width: 750px) {
-    .App{grid-template: 10% 70% 15% 5% / 100%;}
+    .App{grid-template: 10% 70% 15% 5% / 100%;padding: 1em 1em 1em; }
     .header{font-size: 0.3em;}
     .centerpanel{flex-direction: column; justify-content: space-around; height: 100%;}
     .resultpanel{width : 100%;align-items: center;}
     .resultpanel > .image{ height: 110px; width: 130px;}
     .resultpanel > .text{ font-size:1em; bottom: -30px;}
-    .userpanel{width : 100%;}
-    .userpanel > .label{font-size: 2.7em;}
-    .userpanel > .input > .ImageUrlInput{width: 80%;}
+    .userpanel{width : 100%; }
+    .userpanel > .label{font-size: 1.9em;}
+    .userpanel > .input > .ImageUrlInput{width: 80%; max-width: 300px;}
     .Disclaimer>.textsubpanel{width: 100%;} 
-    .Disclaimer>.textsubpanel{ font-size: 0.5em; }
-    .footer{font-size: 0.4em;}
+    
 }
 @media only screen and (max-width: 600px) {
     
-    .userpanel > .label{font-size:2.4em;}
+    .userpanel > .label{font-size:1.6em;}
+    .Disclaimer>.textsubpanel{ font-size: 0.5em; }
+    .footer{font-size: 0.4em;}
 }
