@@ -31,7 +31,7 @@ html, body{
     font-size: 0.6em;
     line-height: 45em;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 .header>h1{
@@ -53,12 +53,10 @@ html, body{
 }
 .userpanel{width : 65%;}
 .userpanel > .label{
-    /* position: absolute;
-    top: 0; */
     color: white;
     font-style: normal;
     font-weight: 900;
-    font-size: 4em;
+    font-size: 4.5em;
     line-height: 1.4em;
     margin-bottom: 0.2em;
 }
@@ -135,9 +133,13 @@ html, body{
     .footer > .links > .mail:hover::after {content : " :: tariqaxel@gmail.com";}
 }
 
-/* Mobile */
+
+@media only screen and (max-width: 1150px) {
+    .userpanel > .label{font-size: 3.5em;}
+}
 @media only screen and (max-width: 950px) {
-    .userpanel > .label{font-size: 3em;}
+    .userpanel > .label{font-size: 2.7em;}
+    .Disclaimer>.textsubpanel{width: 100%;} 
 }
 
 /* Mobile */
@@ -149,13 +151,13 @@ html, body{
     .resultpanel > .image{ height: 110px; width: 130px;}
     .resultpanel > .text{ font-size:1em; bottom: -30px;}
     .userpanel{width : 100%;}
-    .userpanel > .label{font-size: 2.5em;}
+    .userpanel > .label{font-size: 2.7em;}
     .userpanel > .input > .ImageUrlInput{width: 80%;}
     .Disclaimer>.textsubpanel{width: 100%;} 
+    .Disclaimer>.textsubpanel{ font-size: 0.5em; }
+    .footer{font-size: 0.4em;}
 }
 @media only screen and (max-width: 600px) {
     
-    .userpanel > .label{font-size:2em;}
-    .Disclaimer>.textsubpanel{ font-size: 0.5em; }
-    .footer{font-size: 0.4em;}
+    .userpanel > .label{font-size:2.4em;}
 }
